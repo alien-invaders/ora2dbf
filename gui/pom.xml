@@ -20,5 +20,32 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>appassembler-maven-plugin</artifactId>
+                <version>1.3</version>
+                <configuration>
+                    <programs>
+                        <program>
+                            <mainClass>ru.ailabs.convert2dbf.convert.MainGUI</mainClass>
+                            <name>ora2dbf_gui</name>
+                        </program>
+                    </programs>
+                    <useAllProjectDependencies>true</useAllProjectDependencies>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-runnable</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>assemble</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

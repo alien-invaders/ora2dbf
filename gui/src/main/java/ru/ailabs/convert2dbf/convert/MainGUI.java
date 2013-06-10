@@ -61,7 +61,10 @@ public class MainGUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        file = new File("gui\\src\\main\\resources\\properties.properties");
+
+        file = new File("properties.properties");
+        if(!file.exists())
+            file.createNewFile();
         Properties properties = new Properties();
         properties.load(new FileInputStream(file));
 
@@ -209,9 +212,9 @@ public class MainGUI extends javax.swing.JFrame {
         String username = dbUsername.getText();
         String sql = jTextArea1.getText();
         String dbffile = path.getText();
-        /*if (dbffile == null) {
-            dbffile = sqlfile + ".convert2dbf";
-        }*/
+        if (dbffile == null || dbffile.trim().length() == 0) {
+            dbffile = "output.dbf";
+        }
 
         //StringBuilder query = ResourceStringReader.readToBuilder(new FileInputStream(sqlfile), "UTF-8");
 

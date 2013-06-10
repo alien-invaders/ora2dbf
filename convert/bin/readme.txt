@@ -1,1 +1,0 @@
-run.bat -jdbc jdbc:oracle:thin:@localhost:1521:DB -user CONFADM -pass CONFADM -sql acct.sql -dbf result.dbf

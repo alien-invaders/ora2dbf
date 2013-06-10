@@ -1,1 +1,0 @@
-select * from CI_ACCT
