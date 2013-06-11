@@ -9,6 +9,10 @@
     <version>1.0</version>
     <packaging>pom</packaging>
 
+    <properties>
+        <build.number>0</build.number>
+    </properties>
+
     <modules>
         <module>convert</module>
         <module>gui</module>
@@ -77,7 +81,7 @@
                             <configuration>
                                 <target>
                                     <zip basedir="${project.build.directory}/appassembler"
-                                         destfile="${project.build.directory}/${project.build.finalName}.zip"/>
+                                         destfile="${project.build.directory}/${project.build.finalName}.${build.number}.zip"/>
                                 </target>
                             </configuration>
                         </execution>
